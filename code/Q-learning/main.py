@@ -26,7 +26,7 @@ Environment:
 # -*- coding: utf-8 -*-
 
 import gym
-from gridworld import CliffWalkingWapper, FrozenLakeWapper, GridWorld
+from gridworld import  FrozenLakeWapper, GridWorld
 from agent import QLearning
 import os
 import numpy as np
@@ -48,7 +48,7 @@ def get_args():
     parser.add_argument("--epsilon_decay", default=20,
                         type=float, help="e-greedy策略中epsilon的衰减率")
     parser.add_argument("--policy_lr", default=0.1, type=float, help="学习率")
-    parser.add_argument("--max_episodes", default=100000,
+    parser.add_argument("--max_episodes", default=1000000,
                         type=int, help="训练的最大episode数目")
 
     config = parser.parse_args()
@@ -59,7 +59,7 @@ def get_args():
 def train(cfg):
     # env = gym.make("FrozenLake-v0", is_slippery=False)  # 0 left, 1 down, 2 right, 3 up
     # env = FrozenLakeWapper(env)
-    
+
     # env = gym.make("CliffWalking-v0")  # 0 up, 1 right, 2 down, 3 left
     # env = CliffWalkingWapper(env)
 
