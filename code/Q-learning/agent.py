@@ -93,7 +93,7 @@ class QLearning(object):
             Q_target = reward  # 没有下一个状态了
         else:
             Q_target = reward + self.gamma * np.max(
-                self.Q_table[next_obs, :])  # Q_table-learning
+                self.Q_table[next_obs, :])  # Q_table-learning 
         self.Q_table[obs, action] += self.lr * (Q_target - Q_predict)  # 修正q
 
     def save(self):
